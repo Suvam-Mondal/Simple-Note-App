@@ -3,7 +3,7 @@ A simple memo app which allows the user to create memos, edit existing memos and
 
 ## Screenshots 
 
-![Memo](https://github.com/Suvam-Mondal/Simple-Memo-App/blob/master/Screenshot_20170501-135326.png)
+![Memo](https://github.com/Suvam-Mondal/Simple-Memo-App/blob/master/Screenshot_20170501-135326.png width="48" heighy="100")
 
 ![Memo](https://github.com/Suvam-Mondal/Simple-Memo-App/blob/master/Screenshot_20170501-135256.png)
 
