@@ -57,6 +57,7 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         super.onResume();
         dbAccess.open();
        List<String> cs = dhelp.getData();
+
        lvItems.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, cs));
         dbAccess.close();
     }
@@ -85,10 +86,16 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         char s1;
         int j=0;
         String g="";
-        while((s1=text.charAt(j))!='.')
+        int len = text.length()-1;
+        /*while((s1=text.charAt(j))!='.')
         {
             g += s1;
             j++;
+        }*/
+        for(j=0;j<len;j++)
+        {
+            s1= text.charAt(j);
+            g += s1;
         }
         String content = g.replace(note_date,"");
         content=content.trim();
@@ -101,12 +108,24 @@ public class MainActivity extends Activity implements View.OnClickListener, Adap
         popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                dbAccess.open();
-                dhelp.onDelete(finalNote_date,finalNe);
-                onResume();
+               if (item.getTitle().equals("Delete")) {
+                   dbAccess.open();
+                   dhelp.onDelete(finalNote_date,finalNe);
+                   onResume();
+               }
+                else if (item.getTitle().equals("Edit"))
+               {
+
+                   Intent edit = new Intent(MainActivity.this,Edit.class);
+                   edit.putExtra("content",finalNe);
+                   edit.putExtra("date",finalNote_date);
+                   startActivity(edit);
+
+               }
                 return true;
             }
         });
+
         popupMenu.show();
     }
 }

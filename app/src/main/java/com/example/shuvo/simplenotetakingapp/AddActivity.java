@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * Created by Shuvo on 4/28/2017.
@@ -35,6 +36,7 @@ public class AddActivity extends Activity implements View.OnClickListener {
             {
                 str += '.';
             }
+
             DBAccess dbAccess = DBAccess.getInstance(this);
             dbAccess.open();
             dbAccess.save(str,getApplicationContext());

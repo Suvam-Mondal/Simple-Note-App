@@ -54,7 +54,7 @@ public class DBAccess {
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyy 'at' hh:mm aaa");
         Date date =  new Date();
         String dd= dateFormat.format(date);
-
+        //String snew = str.replace("'","\\");
         database.execSQL("INSERT INTO " + DBHelper.TABLE+ " VALUES('"+dd+"','"+str+"');");
         id=id+1;
         SharedPreferences pref = ct.getSharedPreferences(PREFS_NAME, 0);

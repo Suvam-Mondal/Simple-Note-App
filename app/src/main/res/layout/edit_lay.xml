@@ -6,31 +6,32 @@
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:hint="Write Here"
-        android:id="@+id/edittext"
-        android:layout_marginTop="50dp"
+        android:layout_height="300dp"
+        android:id="@+id/edit"
+        android:background="#FFE761"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_gravity="center_horizontal"
-        android:background="#FFE761"/>
+        android:layout_marginTop="47dp" />
 
     <Button
-        android:layout_width="wrap_content"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
-        android:text="Create"
-        android:id="@+id/button2"
+        android:text="Save"
+        android:id="@+id/save"
+        android:layout_below="@+id/edit"
         android:background="@drawable/mybutton2"
-        android:layout_marginBottom="67dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="49dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="CREATE A NEW NOTE"
-        android:id="@+id/textView2"
+        android:text="EDIT YOUR NOTE"
+        android:id="@+id/textView"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>

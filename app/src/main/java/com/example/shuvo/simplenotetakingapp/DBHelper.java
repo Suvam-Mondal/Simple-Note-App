@@ -45,7 +45,6 @@ public class DBHelper extends SQLiteOpenHelper{
 
         int iCM = c.getColumnIndex("content");
         int date= c.getColumnIndex("dat");
-
         for (c.moveToFirst(); !c.isAfterLast(); c.moveToNext()) {
             results.add("\t\t\t\t\t\t\t\t\t"+c.getString(date)+"\n \n"+"  "+c.getString(iCM));
 
@@ -57,7 +56,14 @@ public class DBHelper extends SQLiteOpenHelper{
     public void onDelete(String note_date,String str)
     {
 
-        getWritableDatabase().execSQL("DELETE FROM "+ DBHelper.TABLE+ " WHERE dat='"+note_date+"' and content LIKE '"+str+".%';");
+
+        getWritableDatabase().execSQL("DELETE FROM "+ DBHelper.TABLE+ " WHERE dat='"+note_date+"' and content LIKE '"+str+".';");
+
+    }
+    public void onEdit(String note_date,String str,String con)
+    {
+
+        getWritableDatabase().execSQL("UPDATE "+ DBHelper.TABLE+ " SET content = '"+ str +".' WHERE dat='"+note_date+"' and content LIKE '"+con+".%';");
 
     }
 
